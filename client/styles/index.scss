@@ -3,4 +3,29 @@
 html, 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: aliceblue;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Rubik Marker Hatch';
+  margin:auto;
+  margin-top: 300px;
+  margin-bottom: 30px;
+}
+
+button,input,label {
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: larger;
+}
+
+input {
+  width: 500px;
+  height: 30px;
 }
