@@ -5,6 +5,6 @@ export async function getAllBooks(): Promise<Book[]> {
   return connection('books').select('*')
 }
 
-export async function checkOutBook(customerId: number, bookId: number): Promise<void> {
+export async function checkOutBook(bookId: number, customerId: number): Promise<void> {
   return connection('books').where('id', bookId).update({'is_available': false, 'customer_id': customerId})
 }
