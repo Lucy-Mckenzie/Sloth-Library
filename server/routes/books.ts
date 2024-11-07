@@ -15,9 +15,12 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.patch('/:bookId/:customerId', async (req, res, next) => {
+router.patch('/:bookId', async (req, res, next) => {
   try {
-    const {bookId, customerId} = req.params
+    const {bookId} = req.params
+    const customerId = req.body.customerId
+    
+    console.log(customerId)
     
     await db.checkOutBook(Number(bookId), Number(customerId))
     res.sendStatus(204)

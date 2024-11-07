@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import request from 'superagent'
-const rootUrl = '/api/v1'
 
 
 // export function getBooks(): Promise<string[]> {
@@ -9,25 +8,19 @@ const rootUrl = '/api/v1'
 //   })
 // }
 
-<<<<<<< HEAD
-export default function useEventBook(id: number) {
+export default function useEventCheckoutBook() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async (values: Event) => {
-      await request.patch(`/api/v1/events/${id}`).send(values)
+    mutationFn: async ({bookId, customerId}: {bookId: string | number, customerId: string}) => {
+      
+      await request.patch(`/api/v1/books/${bookId}`).send({customerId})
     },
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: ['event', id] })
+      queryClient.invalidateQueries({ queryKey: ['event'] })
       queryClient.invalidateQueries({ queryKey: ['schedule'] })
     },
   })
 }
-=======
-// export default function checkOutBookEvent(customerId: number, bookId: number){
-//   const queryClient = useQueryClient()
-// }
 
 
-
->>>>>>> main
