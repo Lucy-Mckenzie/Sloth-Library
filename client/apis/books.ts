@@ -8,9 +8,9 @@ const rootUrl = '/api/v1'
 //   })
 // }
 
-export default function checkOutBookEvent(customerId: number, bookId: number){
-  const queryClient = useQueryClient()
-}
+// export default function checkOutBookEvent(customerId: number, bookId: number){
+//   const queryClient = useQueryClient()
+// }
 
 
 
