@@ -10,11 +10,11 @@ interface Props extends FormData {
   onSubmit: (_: FormData) => void
 }
 
-export default function CheckoutForm({ submitLabel, onSubmit}: Props) {
+export default function CheckoutForm({customerName, bookTitle, submitLabel, onSubmit}: Props) {
   // formState holds current values of form inputs
   const [formState, setFormState] = useState<FormData>({ 
-    customerName: '',
-    bookTitle: '',
+    customerName: customerName || '',
+    bookTitle: bookTitle || '',
   })
 
   // When the user types something, this function is triggered

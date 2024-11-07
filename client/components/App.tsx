@@ -1,9 +1,14 @@
-// import CheckoutForm from './CheckoutForm'
+import CheckoutForm from './CheckoutForm'
 
 export default function App() {
+
+  const handleSubmit = (formData: { customerName: string; bookTitle: string }) => {
+    console.log(formData)
+  }
   return (
     <>
-      {/* <CheckoutForm submitLabel="Book checked out" onSubmit={handleSubmit} /> */}
+    <h1>Library checkout</h1>
+      <CheckoutForm customerName="" bookTitle="" submitLabel="Book checked out" onSubmit={handleSubmit} />
     </>
   )
 }
