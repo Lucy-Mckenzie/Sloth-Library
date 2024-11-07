@@ -30,6 +30,7 @@ export default function CheckoutForm({submitLabel, onSubmit}: Props) {
   const handleSubmit = (evt: FormEvent) => {
     evt.preventDefault()
     onSubmit(formState)
+    setFormState({customerId: '', bookId: 0})
   } 
 
     return (
