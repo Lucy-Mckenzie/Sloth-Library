@@ -41,7 +41,7 @@ export default function CheckoutForm({submitLabel, onSubmit}: Props) {
           <input
             name="customerId"
             type="text"
-            placeholder="Enter customer Id"
+            placeholder="Enter Customer Id"
             value={formState.customerId}
             onChange={handleChange}
             required />
@@ -52,7 +52,7 @@ export default function CheckoutForm({submitLabel, onSubmit}: Props) {
           <input
             name="bookId"
             type="text"
-            placeholder="Enter book Id"
+            placeholder="Enter Book Id"
             value={formState.bookId}
             onChange={handleChange} 
             required />
