@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const books = await db.getAllBooks()
 
-    res.json({ fruits: books.map((book) => book.title) })
+    res.json({ books: books.map((book) => book.title) })
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })
