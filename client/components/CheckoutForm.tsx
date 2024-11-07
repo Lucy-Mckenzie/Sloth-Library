@@ -1,8 +1,8 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 
 interface FormData {
-  customerName: string
-  bookTitle: string
+  customerId: string
+  bookId: number | string
 }
 
 interface Props extends FormData {
@@ -10,11 +10,11 @@ interface Props extends FormData {
   onSubmit: (_: FormData) => void
 }
 
-export default function CheckoutForm({customerName, bookTitle, submitLabel, onSubmit}: Props) {
+export default function CheckoutForm({submitLabel, onSubmit}: Props) {
   // formState holds current values of form inputs
   const [formState, setFormState] = useState<FormData>({ 
-    customerName: customerName || '',
-    bookTitle: bookTitle || '',
+    customerId: '',
+    bookId:  0 || '',
   })
 
   // When the user types something, this function is triggered
@@ -25,7 +25,6 @@ export default function CheckoutForm({customerName, bookTitle, submitLabel, onSu
       [name]: value,
     }))
   } 
-
   // handleSubmit is called when the form is submitted
   // It prevents the default form submission and calls onSubmit, sending formState as data to the parent
   const handleSubmit = (evt: FormEvent) => {
@@ -37,12 +36,12 @@ export default function CheckoutForm({customerName, bookTitle, submitLabel, onSu
 
       <form onSubmit={handleSubmit}>
         <label>
-          Customer name:
+          Customer Id:
           <input
-            name="customerName"
+            name="customerId"
             type="text"
-            placeholder="Enter customer name"
-            value={formState.customerName}
+            placeholder="Enter customer Id"
+            value={formState.customerId}
             onChange={handleChange}
             required />
         </label>
@@ -50,10 +49,10 @@ export default function CheckoutForm({customerName, bookTitle, submitLabel, onSu
         <label>
           Book title:
           <input
-            name="bookTitle"
+            name="bookId"
             type="text"
-            placeholder="Enter book title"
-            value={formState.bookTitle}
+            placeholder="Enter book Id"
+            value={formState.bookId}
             onChange={handleChange} 
             required />
         </label>
