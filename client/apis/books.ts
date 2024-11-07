@@ -1,6 +1,6 @@
-// import request from 'superagent'
-
-// const rootUrl = '/api/v1'
+import { useQueryClient } from '@tanstack/react-query'
+import request from 'superagent'
+const rootUrl = '/api/v1'
 
 // export function getBooks(): Promise<string[]> {
 //   return request.get(rootUrl + '/fruits').then((res) => {
@@ -8,6 +8,9 @@
 //   })
 // }
 
+export default function checkOutBookEvent(customerId: number, bookId: number){
+  const queryClient = useQueryClient()
+}
 
 
 
