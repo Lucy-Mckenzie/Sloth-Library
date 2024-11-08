@@ -15,9 +15,8 @@ export default function App() {
 
   return (
     <>
-    <h1>Library checkout</h1>
-    <Header />
-      <CheckoutForm customerId="" bookId="" submitLabel="Check out book" onSubmit={handleSubmit} />
+    <h1>Library Checkout</h1>
+      <CheckoutForm customerId="" bookId="" submitLabel="Checkout Book" onSubmit={handleSubmit} />
       <BookList />
       <Footer />
     </>
