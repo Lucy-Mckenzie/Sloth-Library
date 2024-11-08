@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import request from 'superagent'
-import { Book, BookWithCustomerName } from '../../models/book'
+import { BookWithCustomerName } from '../../models/book'
 
 export default function useEventCheckoutBook() {
   const queryClient = useQueryClient()
