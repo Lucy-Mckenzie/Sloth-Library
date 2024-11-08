@@ -1,8 +1,17 @@
 import connection from './connection.ts'
-import { Book } from '../../models/book.ts'
+import { BookWithCustomerName } from '../../models/book.ts'
 
-export async function getAllBooks(): Promise<Book[]> {
-  return connection('books').select('*')
+export async function getAllBooks(): Promise<BookWithCustomerName[]> {
+  return connection('books')
+  .join('customers', 'customers.id', 'books.customer_id')
+  .select(
+    'books.id as id',
+    'customer_id as customerId',
+    'title',
+    'author',
+    'is_available as isAvailable',
+    'customers.name as customerName'
+  )
 }
 
 export async function checkOutBook(bookId: number, customerId: number): Promise<void> {

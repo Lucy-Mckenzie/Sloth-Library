@@ -6,3 +6,7 @@ export interface Book {
   isAvailable: string
 }
 
+export interface BookWithCustomerName extends Book{
+  customerName: string
+}
+

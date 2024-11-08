@@ -1,5 +1,8 @@
 import CheckoutForm from './CheckoutForm'
 import useEventCheckoutBook from '../apis/books';
+import Footer from './Footer';
+import Header from './Header';
+import BookList from './Booklist';
 
 
 export default function App() {
@@ -13,8 +16,12 @@ export default function App() {
   return (
     <>
     <h1>Library checkout</h1>
-      <CheckoutForm customerId="" bookId="" submitLabel="Book checked out" onSubmit={handleSubmit} />
+    <Header />
+      <CheckoutForm customerId="" bookId="" submitLabel="Check out book" onSubmit={handleSubmit} />
+      <BookList />
+      <Footer />
     </>
   )
 
 }
+
