@@ -1,12 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import request from 'superagent'
-
-
-// export function getBooks(): Promise<string[]> {
-//   return request.get(rootUrl + '/fruits').then((res) => {
-//     return res.body.fruits
-//   })
-// }
+import { Book, BookWithCustomerName } from '../../models/book'
 
 export default function useEventCheckoutBook() {
   const queryClient = useQueryClient()
@@ -22,5 +16,11 @@ export default function useEventCheckoutBook() {
     },
   })
 }
+
+export async function useGetListOfBooks(): Promise<BookWithCustomerName[]>  {
+  const result = await request.get('/api/v1/books')
+  return result.body
+}
+   
 
 
