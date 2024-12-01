@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
+html,
 body {
-  font-family: 'Montserrat', sans-serif;
   background-color: aliceblue;
 }
 
 h1 {
   text-align: center;
-  font-family: 'Rubik Marker Hatch';
-  margin:auto;
-  margin-top: 100px;
+  margin: auto;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
 
-button,input,label {
+button,
+input,
+label {
   text-align: center;
   display: block;
   margin: auto;
@@ -28,20 +28,45 @@ label {
 input {
   width: 500px;
   height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .bookList {
-  width: 100%;
+  width: 80%; 
+  margin: 20px auto; 
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-  margin-top: 20px;
-  
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
 }
 
-.booklist , td {
+.bookList th,
+.bookList td {
+  padding: 12px 15px;
   text-align: center;
+  border: 1px solid #ddd;
 }
 
-table, th, td {
-  border: 1px solid black;
+.bookList th {
+  background-color: #5f6368;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.bookList tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.bookList tr:hover {
+  background-color: #e0e0e0; 
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
 }
